@@ -11,36 +11,36 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+    <header className="bg-white shadow-lg border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <Calculator className="text-primary-foreground" size={20} />
+        <div className="flex justify-between items-center h-20">
+          <div className="flex items-center space-x-4">
+            <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
+              <Calculator className="text-primary-foreground" size={24} />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">GradeConverter</h1>
-              <p className="text-xs text-gray-500">Professional CGPA Tool</p>
+              <h1 className="text-2xl font-bold text-gray-900">GradeConverter</h1>
+              <p className="text-sm text-gray-500">Professional CGPA Tool</p>
             </div>
           </div>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-10">
             <button 
               onClick={() => scrollToSection('converter')}
-              className="text-gray-700 hover:text-primary font-medium transition-colors"
+              className="text-lg text-gray-700 hover:text-primary font-semibold transition-colors"
             >
               Converter
             </button>
             <button 
               onClick={() => scrollToSection('guide')}
-              className="text-gray-700 hover:text-primary font-medium transition-colors"
+              className="text-lg text-gray-700 hover:text-primary font-semibold transition-colors"
             >
               Guide
             </button>
             <button 
               onClick={() => scrollToSection('faq')}
-              className="text-gray-700 hover:text-primary font-medium transition-colors"
+              className="text-lg text-gray-700 hover:text-primary font-semibold transition-colors"
             >
               FAQ
             </button>

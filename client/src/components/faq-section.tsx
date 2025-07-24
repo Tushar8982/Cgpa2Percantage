@@ -34,32 +34,32 @@ export default function FaqSection() {
   };
 
   return (
-    <section id="faq" className="bg-gray-50 py-16">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-          <p className="text-lg text-gray-600">
+    <section id="faq" className="bg-gray-50 py-20">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+          <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
             Get answers to common questions about CGPA and percentage conversion.
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-6">
           {faqData.map((faq, index) => (
-            <Card key={index} className="border border-gray-200 overflow-hidden">
+            <Card key={index} className="border border-gray-200 overflow-hidden shadow-lg hover:shadow-xl transition-shadow rounded-2xl">
               <Button
                 variant="ghost"
-                className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors h-auto"
+                className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors h-auto"
                 onClick={() => toggleFaq(index)}
               >
-                <span className="font-semibold text-gray-900 text-left flex-1">{faq.question}</span>
+                <span className="font-semibold text-gray-900 text-left flex-1 text-lg">{faq.question}</span>
                 <ChevronDown 
                   className={`text-gray-400 transition-transform ${openFaq === index ? 'rotate-180' : ''}`}
-                  size={20}
+                  size={24}
                 />
               </Button>
               {openFaq === index && (
-                <CardContent className="px-6 pb-4 pt-0">
-                  <p className="text-gray-600">{faq.answer}</p>
+                <CardContent className="px-8 pb-6 pt-0">
+                  <p className="text-gray-600 text-lg leading-relaxed">{faq.answer}</p>
                 </CardContent>
               )}
             </Card>

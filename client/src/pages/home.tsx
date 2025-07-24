@@ -12,65 +12,39 @@ export default function Home() {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/5 to-blue-50 py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      <section className="bg-gradient-to-br from-primary/8 to-blue-50 py-24 md:py-32">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight">
             CGPA to Percentage <span className="text-primary">Converter</span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
             Professional-grade conversion tool supporting multiple grading scales. Accurate, fast, and trusted by students worldwide.
           </p>
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600">
-            <div className="flex items-center space-x-2">
-              <CheckCircle className="text-secondary w-5 h-5" />
-              <span>Multiple Scales Supported</span>
+          <div className="flex flex-wrap justify-center gap-8 text-lg text-gray-600">
+            <div className="flex items-center space-x-3">
+              <CheckCircle className="text-secondary w-6 h-6" />
+              <span className="font-medium">Multiple Scales Supported</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <Smartphone className="text-secondary w-5 h-5" />
-              <span>Mobile Optimized</span>
+            <div className="flex items-center space-x-3">
+              <Smartphone className="text-secondary w-6 h-6" />
+              <span className="font-medium">Mobile Optimized</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <Zap className="text-secondary w-5 h-5" />
-              <span>Instant Results</span>
+            <div className="flex items-center space-x-3">
+              <Zap className="text-secondary w-6 h-6" />
+              <span className="font-medium">Instant Results</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Ad Space Placeholder */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <Card className="bg-gray-100 border-2 border-dashed border-gray-300">
-          <CardContent className="p-8 text-center">
-            <p className="text-gray-500 font-medium">Advertisement Space</p>
-            <p className="text-sm text-gray-400 mt-1">728x90 Banner Ad</p>
-          </CardContent>
-        </Card>
-      </div>
-
       <ConverterForm />
 
-      {/* Ad Space Placeholder */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <Card className="bg-gray-100 border-2 border-dashed border-gray-300">
-          <CardContent className="p-6 text-center">
-            <p className="text-gray-500 font-medium">Advertisement Space</p>
-            <p className="text-sm text-gray-400 mt-1">300x250 Medium Rectangle</p>
-          </CardContent>
-        </Card>
-      </div>
+
 
       <EducationalGuide />
       <FaqSection />
 
-      {/* Ad Space Placeholder */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <Card className="bg-gray-100 border-2 border-dashed border-gray-300">
-          <CardContent className="p-8 text-center">
-            <p className="text-gray-500 font-medium">Advertisement Space</p>
-            <p className="text-sm text-gray-400 mt-1">728x90 Banner Ad</p>
-          </CardContent>
-        </Card>
-      </div>
+
 
       <Footer />
     </div>

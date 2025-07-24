@@ -54,27 +54,27 @@ const conversionTableData = [
 
 export default function EducationalGuide() {
   return (
-    <section id="guide" className="bg-white py-16">
+    <section id="guide" className="bg-white py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Understanding CGPA Conversion</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Understanding CGPA Conversion</h2>
+          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Learn about different grading systems and conversion methods used by universities worldwide.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {scaleData.map((scale, index) => {
             const Icon = scale.icon;
             return (
-              <Card key={index} className={`bg-gradient-to-br ${scale.bgColor} border ${scale.borderColor} hover:shadow-lg transition-shadow`}>
-                <CardContent className="p-6">
-                  <div className={`w-12 h-12 ${scale.iconBg} rounded-lg flex items-center justify-center mb-4`}>
-                    <Icon className="text-white" size={20} />
+              <Card key={index} className={`bg-gradient-to-br ${scale.bgColor} border ${scale.borderColor} hover:shadow-xl transition-all duration-300 hover:scale-105`}>
+                <CardContent className="p-8">
+                  <div className={`w-16 h-16 ${scale.iconBg} rounded-xl flex items-center justify-center mb-6`}>
+                    <Icon className="text-white" size={28} />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{scale.title}</h3>
-                  <p className="text-sm text-gray-600 mb-3">{scale.description}</p>
-                  <div className="text-xs text-gray-500 space-y-1">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{scale.title}</h3>
+                  <p className="text-base text-gray-600 mb-4 leading-relaxed">{scale.description}</p>
+                  <div className="text-sm text-gray-500 space-y-2">
                     <p><strong>Formula:</strong> {scale.formula}</p>
                     <p><strong>Example:</strong> {scale.example}</p>
                   </div>
@@ -86,25 +86,25 @@ export default function EducationalGuide() {
 
         {/* Conversion Table */}
         <div>
-          <h3 className="text-2xl font-semibold text-gray-900 mb-8 text-center">CGPA to Percentage Conversion Table</h3>
-          <Card className="shadow-sm overflow-hidden">
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">CGPA to Percentage Conversion Table</h3>
+          <Card className="shadow-xl overflow-hidden rounded-2xl border-0">
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead className="bg-gray-50">
                   <tr>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">CGPA (10.0)</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Percentage</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Grade</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">GPA (4.0)</th>
+                    <th className="px-8 py-6 text-left text-lg font-bold text-gray-900">CGPA (10.0)</th>
+                    <th className="px-8 py-6 text-left text-lg font-bold text-gray-900">Percentage</th>
+                    <th className="px-8 py-6 text-left text-lg font-bold text-gray-900">Grade</th>
+                    <th className="px-8 py-6 text-left text-lg font-bold text-gray-900">GPA (4.0)</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
                   {conversionTableData.map((row, index) => (
                     <tr key={index} className={index % 2 === 1 ? "bg-gray-50" : "bg-white"}>
-                      <td className="px-6 py-4 text-sm text-gray-900 font-medium">{row.cgpa}</td>
-                      <td className="px-6 py-4 text-sm text-gray-900">{row.percentage}</td>
-                      <td className="px-6 py-4 text-sm text-gray-900">{row.grade}</td>
-                      <td className="px-6 py-4 text-sm text-gray-900">{row.gpa4}</td>
+                      <td className="px-8 py-5 text-lg text-gray-900 font-semibold">{row.cgpa}</td>
+                      <td className="px-8 py-5 text-lg text-gray-900">{row.percentage}</td>
+                      <td className="px-8 py-5 text-lg text-gray-900">{row.grade}</td>
+                      <td className="px-8 py-5 text-lg text-gray-900">{row.gpa4}</td>
                     </tr>
                   ))}
                 </tbody>

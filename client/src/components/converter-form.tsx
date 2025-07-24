@@ -44,8 +44,8 @@ export default function ConverterForm() {
   };
 
   return (
-    <section id="converter" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <Card className="shadow-lg border-0 bg-white rounded-2xl overflow-hidden">
+    <section id="converter" className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <Card className="shadow-2xl border-0 bg-white rounded-3xl overflow-hidden">
         <Tabs defaultValue="cgpa-to-percentage" className="w-full">
           <TabsList className="grid w-full grid-cols-2 h-auto p-0 bg-transparent border-b border-gray-200 rounded-none">
             <TabsTrigger 
@@ -64,15 +64,15 @@ export default function ConverterForm() {
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="cgpa-to-percentage" className="p-8 mt-0">
-            <div className="grid md:grid-cols-2 gap-8">
+          <TabsContent value="cgpa-to-percentage" className="p-10 mt-0">
+            <div className="grid md:grid-cols-2 gap-12">
               {/* Input Section */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Enter Your CGPA</h3>
+              <div className="space-y-8">
+                <h3 className="text-3xl font-semibold text-gray-900 mb-6">Enter Your CGPA</h3>
                 
-                <form onSubmit={cgpaForm.handleSubmit(onCgpaSubmit)} className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="cgpa-scale">Select CGPA Scale</Label>
+                <form onSubmit={cgpaForm.handleSubmit(onCgpaSubmit)} className="space-y-8">
+                  <div className="space-y-3">
+                    <Label htmlFor="cgpa-scale" className="text-lg font-medium">Select CGPA Scale</Label>
                     <Select 
                       value={cgpaForm.watch("scale")} 
                       onValueChange={(value) => cgpaForm.setValue("scale", value as any)}
@@ -90,8 +90,8 @@ export default function ConverterForm() {
                     </Select>
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="cgpa-value">Your CGPA</Label>
+                  <div className="space-y-3">
+                    <Label htmlFor="cgpa-value" className="text-lg font-medium">Your CGPA</Label>
                     <Input
                       id="cgpa-value"
                       type="number"
@@ -100,16 +100,16 @@ export default function ConverterForm() {
                       max={scaleInfo[cgpaForm.watch("scale")]?.max || 10}
                       placeholder="e.g., 8.5"
                       {...cgpaForm.register("cgpa", { valueAsNumber: true })}
-                      className="text-lg"
+                      className="text-xl py-4 px-6 h-14"
                     />
                     {cgpaForm.formState.errors.cgpa && (
                       <p className="text-sm text-destructive">{cgpaForm.formState.errors.cgpa.message}</p>
                     )}
-                    <p className="text-xs text-gray-500">Enter your CGPA (up to 2 decimal places)</p>
+                    <p className="text-sm text-gray-500">Enter your CGPA (up to 2 decimal places)</p>
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="conversion-standard">Conversion Standard</Label>
+                  <div className="space-y-3">
+                    <Label htmlFor="conversion-standard" className="text-lg font-medium">Conversion Standard</Label>
                     <Select 
                       value={cgpaForm.watch("conversionStandard")} 
                       onValueChange={(value) => cgpaForm.setValue("conversionStandard", value as any)}
@@ -127,25 +127,25 @@ export default function ConverterForm() {
                     </Select>
                   </div>
 
-                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3">
-                    <Calculator className="w-4 h-4 mr-2" />
+                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-5 text-xl h-16">
+                    <Calculator className="w-5 h-5 mr-3" />
                     Convert to Percentage
                   </Button>
                 </form>
               </div>
 
               {/* Results Section */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Conversion Result</h3>
+              <div className="space-y-8">
+                <h3 className="text-3xl font-semibold text-gray-900 mb-6">Conversion Result</h3>
                 
                 <Card className="bg-gradient-to-br from-secondary/10 to-green-50 border border-secondary/20">
-                  <CardContent className="pt-6">
+                  <CardContent className="pt-8">
                     <div className="text-center">
-                      <p className="text-sm text-gray-600 mb-2">Your Percentage</p>
-                      <p className="text-4xl font-bold text-secondary">
+                      <p className="text-lg text-gray-600 mb-3">Your Percentage</p>
+                      <p className="text-5xl md:text-6xl font-bold text-secondary">
                         {cgpaResult ? `${cgpaResult.result}%` : "85.00%"}
                       </p>
-                      <p className="text-sm text-gray-500 mt-2">
+                      <p className="text-lg text-gray-500 mt-4">
                         {cgpaResult ? cgpaResult.grade : "Grade: A"}
                       </p>
                     </div>
@@ -181,15 +181,15 @@ export default function ConverterForm() {
             </div>
           </TabsContent>
 
-          <TabsContent value="percentage-to-cgpa" className="p-8 mt-0">
-            <div className="grid md:grid-cols-2 gap-8">
+          <TabsContent value="percentage-to-cgpa" className="p-10 mt-0">
+            <div className="grid md:grid-cols-2 gap-12">
               {/* Input Section */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Enter Your Percentage</h3>
+              <div className="space-y-8">
+                <h3 className="text-3xl font-semibold text-gray-900 mb-6">Enter Your Percentage</h3>
                 
-                <form onSubmit={percentageForm.handleSubmit(onPercentageSubmit)} className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="percentage-value">Your Percentage</Label>
+                <form onSubmit={percentageForm.handleSubmit(onPercentageSubmit)} className="space-y-8">
+                  <div className="space-y-3">
+                    <Label htmlFor="percentage-value" className="text-lg font-medium">Your Percentage</Label>
                     <Input
                       id="percentage-value"
                       type="number"
@@ -198,16 +198,16 @@ export default function ConverterForm() {
                       max="100"
                       placeholder="e.g., 85.5"
                       {...percentageForm.register("percentage", { valueAsNumber: true })}
-                      className="text-lg"
+                      className="text-xl py-4 px-6 h-14"
                     />
                     {percentageForm.formState.errors.percentage && (
                       <p className="text-sm text-destructive">{percentageForm.formState.errors.percentage.message}</p>
                     )}
-                    <p className="text-xs text-gray-500">Enter your percentage (0-100)</p>
+                    <p className="text-sm text-gray-500">Enter your percentage (0-100)</p>
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="target-scale">Target CGPA Scale</Label>
+                  <div className="space-y-3">
+                    <Label htmlFor="target-scale" className="text-lg font-medium">Target CGPA Scale</Label>
                     <Select 
                       value={percentageForm.watch("targetScale")} 
                       onValueChange={(value) => percentageForm.setValue("targetScale", value as any)}
@@ -225,22 +225,22 @@ export default function ConverterForm() {
                     </Select>
                   </div>
 
-                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3">
-                    <Calculator className="w-4 h-4 mr-2" />
+                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-5 text-xl h-16">
+                    <Calculator className="w-5 h-5 mr-3" />
                     Convert to CGPA
                   </Button>
                 </form>
               </div>
 
               {/* Results Section */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Conversion Result</h3>
+              <div className="space-y-8">
+                <h3 className="text-3xl font-semibold text-gray-900 mb-6">Conversion Result</h3>
                 
                 <Card className="bg-gradient-to-br from-primary/10 to-blue-50 border border-primary/20">
-                  <CardContent className="pt-6">
+                  <CardContent className="pt-8">
                     <div className="text-center">
-                      <p className="text-sm text-gray-600 mb-2">Your CGPA</p>
-                      <p className="text-4xl font-bold text-primary">
+                      <p className="text-lg text-gray-600 mb-3">Your CGPA</p>
+                      <p className="text-5xl md:text-6xl font-bold text-primary">
                         {percentageResult ? percentageResult.result.toFixed(2) : "8.50"}
                       </p>
                       <p className="text-sm text-gray-500 mt-2">
