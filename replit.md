@@ -4,6 +4,12 @@
 
 This is a full-stack web application for converting CGPA (Cumulative Grade Point Average) to percentage and vice versa. The application supports multiple grading scales (4.0, 5.0, 7.0, 10.0) and various conversion standards used by different countries and institutions. It features a modern, responsive design with educational content to help users understand grading systems.
 
+**Developer:** Tushar Khandelwal  
+**Contact:** tusharkhandelwal48@gmail.com  
+**GitHub:** https://github.com/Tushar8982  
+**LinkedIn:** https://linkedin.com/in/tusharkhandelwal77  
+**Twitter:** https://x.com/_tushar77  
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
